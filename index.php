@@ -3,7 +3,7 @@ session_start();
 
 echo "mój kalnedarz<br/>";
 
-$wybrany_miesiac = "4";
+$wybrany_miesiac = "2";
 $wybrany_rok = "2021";
 
 $startowa = new DateTime($wybrany_rok."-".$wybrany_miesiac."-1");
@@ -14,4 +14,9 @@ echo "<br/>";
 echo $nastepny_miesiac->format('Y-m-d');
 echo "<br/>";
 
+
+
+
+$roznica = $startowa->diff($nastepny_miesiac);
+echo $roznica->format('%a');
 ?>
