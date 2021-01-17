@@ -3,38 +3,33 @@ session_start();
 
 echo "mój kalnedarz<br/>";
 
-$wybrany_miesiac = "2";
+$wybrany_miesiac = "12";
 $wybrany_rok = "2021";
 
 $startowa = new DateTime($wybrany_rok."-".$wybrany_miesiac."-1");
-$nastepny_miesiac = new DateTime($wybrany_rok."-".($wybrany_miesiac+1)."-1");
 
-echo $startowa->format('Y-m-d');
-echo "<br/>";
-echo $nastepny_miesiac->format('Y-m-d');
-echo "<br/>";
-
-
-
+if ($wybrany_miesiac == "12")
+ {
+  $nastepny_miesiac = new DateTime(($wybrany_rok+1)."-".($wybrany_miesiac-11)."-1");
+ }
+else
+ {
+  $nastepny_miesiac = new DateTime($wybrany_rok."-".($wybrany_miesiac+1)."-1");
+ }
 
 $roznica = $startowa->diff($nastepny_miesiac);
-//echo $roznica->format('%a');
+$roznica_int = $roznica->format('%a');
 
-echo $roznica;
-echo "<br/>";
-
-echo "moja pętla tworząca obiekty:";
-echo "(pierwsze wywyłanie jest poza nią)";
-echo "<br/>";
-
-$moj_miesiac[1] = $startowa;
-echo $moj_miesiac[1]->format('Y-m-d');
-echo "<br/>";
-
-for ($i=2; $i <= $roznica->format('%a'); $i++)
+for ($i=1; $i <= $roznica_int; $i++)
  {
-   $moj_miesiac[$i] = new DateTime($wybrany_rok."-".$wybrany_miesiac."-".$i);
-   $moj_miesiac[$i]-> format('Y-m-d');
-   echo "<br/>";
+
+   $data = new DateTime($wybrany_rok."-".$wybrany_miesiac."-".$i);
+   $tydzien = $data->format('W');
+   $dzien_tygodnia = $data->format('N');
+
+   $moj_miesiac[$tydzien][$dzien_tygodnia] = $data;
  }
+
+
+
 ?>
