@@ -12,7 +12,7 @@ if (isset($_POST) && $_POST!=null)
      case "drukuj_kalendarium":
       $ile_dni = powiedz_ile_dni($_POST['miesiac'], $_POST['rok']);
       $miesiac = struktura_miesiaca($_POST['miesiac'], $_POST['rok'],$ile_dni);
-      echo json_encode(drukuj_schemat($miesiac));
+      echo drukuj_schemat($miesiac);
 
      break;
    }

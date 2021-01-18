@@ -8,7 +8,7 @@ function uzyskaj_kalendarium() {
   $.ajax({
     type: "POST",
     url: "generator.php",
-    dataType: "json",
+    dataType: "html",
     data: {
       "miesiac": $("input#miesiac").val(),
       "rok": $("input#rok").val(),
@@ -16,13 +16,12 @@ function uzyskaj_kalendarium() {
     },
     success: function(dane){
       console.log(dane);
-      $("span").html(dane);
+      $("span#wyniki").html(dane);
     },
     beforeSend: function(){},
     complete: function(){},
     error: function(xhr){
       console.log(xhr.responseText);
-      $("span").html(xhr.responseText);
     }
   });
 }
