@@ -35,21 +35,32 @@ function powiedz_ile_dni($wybrany_miesiac, $wybrany_rok)
 
 function drukuj_schemat ($moj_miesiac)
  {
+   $naglowek = array("tydz","pon","wt", "śr", "czw", "pt", "sob", "nd");
+   echo "<table><tr>";
+   echo "<td colspan='8'><h3>Schemat miesiąca</h3></td>";
+   echo "</tr><tr>";
+   foreach ($naglowek as $klucze => $wartosci) {
+     echo "<td><b>".$wartosci."</b></td>";
+   }
+   echo "</tr>";
+
    foreach ($moj_miesiac as $klucze => $wartosci) {
-     echo "W".$klucze." ";
+     echo "<tr>";
+     echo "<td>#".$klucze."</td>";
      for ($i = 1; $i<= 7; $i++)
       {
        if (isset($wartosci[$i]))
         {
-           echo $wartosci[$i]->format('d')." ";
+           echo "<td>".$wartosci[$i]->format('d')."</td>";
         }
        else
         {
-          echo "00 ";
+          echo "<td>&nbsp;</td>";
         }
       }
-     echo "<br/>";
+     echo "</tr>";
    }
+   echo "</table>";
  }
 
 
