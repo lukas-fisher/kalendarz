@@ -27,13 +27,14 @@ function uzyskaj_kalendarium() {
   });
 };
 
-function edytuj_dzien(dane) {
+function edytuj_dzien(tydzien,dzien) {
   $.ajax({
     type: "POST",
     url: "generator.php",
     dataType: "html",
     data: {
-      "id_dnia": dane,
+      "id_dnia": (dzien),
+      "id_tygodnia": (tydzien),
       "funkcja": "drukuj_edytor"
     },
     success:function(dane){

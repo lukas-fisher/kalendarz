@@ -19,8 +19,18 @@ if (isset($_POST) && $_POST!=null)
      break;
 
      case "drukuj_edytor":
-      echo $_POST['id_dnia'];
+
+
+
+      $dzien = $_POST['id_dnia'];
+      if (strlen($_POST['id_tygodnia']) == 1)
+       { $tydzien = "0".$_POST['id_tygodnia']; }
+      else
+       { $tydzien = $_POST['id_tygodnia']; }
       echo "<br/>tutaj będzie formularz!<br/>";
+
+      $pobierz_tydzien = $_SESSION['miesiac'][$tydzien];
+      echo $pobierz_tydzien[$dzien]->format('Y m d');
      break;
 
 
