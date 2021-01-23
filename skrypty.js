@@ -1,7 +1,8 @@
 $(document).ready(function(){
  $("button#schemat").click(function(){
    uzyskaj_kalendarium();
- })
+ });
+
 });
 
 function uzyskaj_kalendarium() {
@@ -24,4 +25,8 @@ function uzyskaj_kalendarium() {
       console.log(xhr.responseText);
     }
   });
-}
+};
+
+function edytuj_dzien(dane) {
+  $("span#edycja_dnia").html("edytujemy "+dane);
+};
