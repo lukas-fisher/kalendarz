@@ -51,7 +51,7 @@ function drukuj_schemat ($moj_miesiac)
       {
        if (isset($wartosci[$i]))
         {
-           echo "<td><span class='dzien' onclick='edytuj_dzien(".$wartosci[$i]->format('d').")'>".$wartosci[$i]->format('d')."</span></td>";
+           echo "<td><span class='dzien' onclick='edytuj_dzien(".$i."'>".$wartosci[$i]->format('d')."</span></td>";
         }
        else
         {

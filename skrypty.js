@@ -28,5 +28,21 @@ function uzyskaj_kalendarium() {
 };
 
 function edytuj_dzien(dane) {
-  $("span#edycja_dnia").html("edytujemy "+dane);
+  $.ajax({
+    type: "POST",
+    url: "generator.php",
+    dataType: "html",
+    data: {
+      "id_dnia": dane,
+      "funkcja": "drukuj_edytor"
+    },
+    success:function(dane){
+      $("span#edycja_dnia").html(dane);
+    },
+    beforeSend:function(){},
+    complete:function(){},
+    error:function(xhr){
+      console.log(xhr.responseText);
+    }
+  });
 };
