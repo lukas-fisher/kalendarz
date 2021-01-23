@@ -16,6 +16,7 @@ if (isset($_POST) && $_POST!=null)
      break;
 
      case "drukuj_edytor":
+
      break;
 
 
