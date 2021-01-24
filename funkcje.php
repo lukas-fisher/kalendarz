@@ -49,13 +49,21 @@ function drukuj_schemat ($moj_miesiac)
      echo "<td>#".$klucze."</td>";
      for ($i = 1; $i<= 7; $i++)
       {
+       if ($i == 6) {$klasa = "sobota";}
+       else if ($i == 7) {$klasa = "niedziela";}
+       else {$klasa = "roboczy";}
        if (isset($wartosci[$i]))
         {
-           echo "<td><button onclick='edytuj_dzien(".$klucze.",".$i.")'>".$wartosci[$i]->format('d')."</button></td>";
+           echo "<td class='".$klasa."'><button onclick='edytuj_dzien(".$klucze.",".$i.")'>".$wartosci[$i]->format('d')."</button></td>";
         }
        else
         {
-          echo "<td>&nbsp;</td>";
+          $zmiana = $i-7;
+          $uzupelnienie = clone $wartosci[7];
+          $uzupelnienie->modify($zmiana." day");
+          echo "<td>";
+          echo $uzupelnienie->format('d');
+          echo "</td>";
         }
       }
      echo "</tr>";

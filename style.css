@@ -14,5 +14,17 @@ td {
 }
 
 td:hover {
-  background-color: rgb(190,190,190);
+  background-color: rgb(190,90,90);
+}
+
+.roboczy {
+  background-color: rgb(250,250,250);
+}
+
+.sobota {
+  background-color: rgb(255,255,229);
+}
+
+.niedziela {
+  background-color: rgb(180,180,180);
 }
