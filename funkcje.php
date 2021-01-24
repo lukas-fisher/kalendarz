@@ -43,8 +43,10 @@ function drukuj_schemat ($moj_miesiac)
      echo "<td><b>".$wartosci."</b></td>";
    }
    echo "</tr>";
-
+   $licznik_tygodni = 0;
+   $ile_tygodni = count($moj_miesiac);
    foreach ($moj_miesiac as $klucze => $wartosci) {
+     $licznik_tygodni++;
      echo "<tr>";
      echo "<td>#".$klucze."</td>";
      for ($i = 1; $i<= 7; $i++)
@@ -58,12 +60,24 @@ function drukuj_schemat ($moj_miesiac)
         }
        else
         {
-          $zmiana = $i-7;
-          $uzupelnienie = clone $wartosci[7];
-          $uzupelnienie->modify($zmiana." day");
-          echo "<td>";
-          echo $uzupelnienie->format('d');
-          echo "</td>";
+          if ($licznik_tygodni == 1)
+           {
+             $zmiana = $i-7;
+             $uzupelnienie = clone $wartosci[7];
+             $uzupelnienie->modify($zmiana." day");
+             echo "<td class='inny'>";
+             echo $uzupelnienie->format('d');
+             echo "</td>";
+           }
+          else if ($licznik_tygodni == $ile_tygodni)
+           {
+             $zmiana = $i-1;
+             $uzupelnienie = clone $wartosci[1];
+             $uzupelnienie->modify("+".$zmiana." day");
+             echo "<td class='inny'>";
+             echo $uzupelnienie->format('d');
+             echo "</td>";
+           }
         }
       }
      echo "</tr>";
