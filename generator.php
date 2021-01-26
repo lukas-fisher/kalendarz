@@ -35,6 +35,9 @@ if (isset($_POST) && $_POST!=null)
       echo "B <input type='number' min='0' max='255' id='kolor-B' /> ";
       echo "<button id='koloruj'>pokaż kolor na schemacie</button> ";
       echo "<br/>";
+      echo "święto? ";
+      echo "<select id='swieto' name='value'><option value='nie'>NIE</option>";
+      echo "<option value='tak'>TAK</option></select>";
      break;
 
 
