@@ -1,34 +1,64 @@
-p {
-  font-family: Verdana;
+div {
+ font-family: Verdana;
+ padding: 2px;
+ margin: 2px auto;
+ text-align: center;
+ vertical-align: middle;
 }
 
-table {
-  border: 1px;
+div.wiersz {
+  display: block;
+  width: auto;
 }
 
-td {
-  width: 60px;
-  height: 30px;
-  text-align: center;
-  vertical-align: middle;
+div#log {
+  display: inline-block;
+  width: 250px;
 }
 
-td:hover {
-  background-color: rgb(190,90,90);
+div#kwerenda {
+  display: inline-block;
+}
+
+div#kalendarium  {
+  width: 500px;
+  display:inline-block;
+}
+
+div#edycja_dnia {
+  display:inline-block;
+  border: 1px solid rgb(0,180,0);
+}
+
+#wydruk:hover {
+  background-color: rgba(50,50,50,0.3);
+}
+
+.zwykle {
+  display:inline-block;
+  width: 55px;
 }
 
 .roboczy {
+  display:inline-block;
+  width: 55px;
   background-color: rgb(250,250,250);
 }
 
 .sobota {
+  display:inline-block;
+  width: 55px;
   background-color: rgb(255,255,229);
 }
 
 .niedziela {
+  display:inline-block;
+  width: 55px;
   background-color: rgb(180,180,180);
 }
 
 .inny {
+  display:inline-block;
+  width: 55px;
   background-color: rgb(220,220,220);
 }

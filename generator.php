@@ -11,6 +11,10 @@ if (isset($_POST) && $_POST!=null)
      case "pobierz":
      break;
 
+     case "kwerenda":
+       kwerenda();
+     break;
+
      case "drukuj_kalendarium":
       $ile_dni = powiedz_ile_dni($_POST['miesiac'], $_POST['rok']);
       $miesiac = struktura_miesiaca($_POST['miesiac'], $_POST['rok'],$ile_dni);

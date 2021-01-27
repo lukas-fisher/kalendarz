@@ -1,9 +1,33 @@
 $(document).ready(function(){
- $("button#schemat").click(function(){
-   uzyskaj_kalendarium();
- });
+  $("button#schemat").click(function(){
+    uzyskaj_kalendarium();
+  });
+
+  $("button#zaprojektuj").click(function(){
+    kwerenda();
+  });
 
 });
+
+function kwerenda() {
+  $.ajax({
+    type: "POST",
+    url: "generator.php",
+    dataType: "html",
+    data: {
+      "funkcja": "kwerenda"
+    },
+    success: function(dane){
+      console.log(dane);
+      $("div#kwerenda").html(dane);
+    },
+    beforeSend: function(){},
+    complete: function(){},
+    error: function(xhr){
+      console.log(xhr.responseText);
+    }
+  });
+};
 
 function uzyskaj_kalendarium() {
   $.ajax({
@@ -11,13 +35,13 @@ function uzyskaj_kalendarium() {
     url: "generator.php",
     dataType: "html",
     data: {
-      "miesiac": $("input#miesiac").val(),
-      "rok": $("input#rok").val(),
+      "miesiac": $("#miesiac").val(),
+      "rok": $("#rok").val(),
       "funkcja": "drukuj_kalendarium"
     },
     success: function(dane){
       console.log(dane);
-      $("span#wyniki").html(dane);
+      $("div#roboczy").html(dane);
     },
     beforeSend: function(){},
     complete: function(){},
@@ -38,7 +62,7 @@ function edytuj_dzien(tydzien,dzien) {
       "funkcja": "drukuj_edytor"
     },
     success:function(dane){
-      $("span#edycja_dnia").html(dane);
+      $("div#edycja_dnia").html(dane);
     },
     beforeSend:function(){},
     complete:function(){},
