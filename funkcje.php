@@ -37,7 +37,7 @@ function drukuj_schemat ($moj_miesiac)
  {
    echo "<div id='kalendarium'>";
    $naglowek = array("tydz","pon","wt", "śr", "czw", "pt", "sob", "nd");
-   echo "<div><div><h3>Schemat miesiąca</h3></div></div>";
+   echo "<div><div><h2>Schemat miesiąca</h2></div></div>";
 
    echo "<div>";
    foreach ($naglowek as $klucze => $wartosci) {
@@ -66,7 +66,7 @@ function drukuj_schemat ($moj_miesiac)
              $zmiana = $i-7;
              $uzupelnienie = clone $wartosci[7];
              $uzupelnienie->modify($zmiana." day");
-             echo "<div class='inny'><button>";
+             echo "<div class='inny'><button onclick='poza_zakresem()'>";
              echo $uzupelnienie->format('d');
              echo "</button></div>";
            }
@@ -75,7 +75,7 @@ function drukuj_schemat ($moj_miesiac)
              $zmiana = $i-1;
              $uzupelnienie = clone $wartosci[1];
              $uzupelnienie->modify("+".$zmiana." day");
-             echo "<div class='inny'><button>";
+             echo "<div class='inny'><button onclick='poza_zakresem()'>";
              echo $uzupelnienie->format('d');
              echo "</button></div>";
            }

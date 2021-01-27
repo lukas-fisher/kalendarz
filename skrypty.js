@@ -71,3 +71,22 @@ function edytuj_dzien(tydzien,dzien) {
     }
   });
 };
+
+function poza_zakresem() {
+  $.ajax({
+    type: "POST",
+    url: "generator.php",
+    dataType: "html",
+    data: {
+      "funkcja": "poza_zakresem"
+    },
+    success:function(dane){
+      $("div#edycja_dnia").html(dane);
+    },
+    beforeSend:function(){},
+    complete:function(){},
+    error:function(xhr){
+      console.log(xhr.responseText);
+    }
+  });
+};

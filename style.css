@@ -4,6 +4,7 @@ div {
  margin: 2px auto;
  text-align: center;
  vertical-align: middle;
+ border-radius: 5px;
 }
 
 div.wiersz {
@@ -21,12 +22,13 @@ div#kwerenda {
 }
 
 div#kalendarium  {
-  width: 500px;
-  display:inline-block;
+  width: 600px;
+  display: block;
 }
 
 div#edycja_dnia {
-  display:inline-block;
+  width: 350px;
+  display:block;
   border: 1px solid rgb(0,180,0);
 }
 
@@ -37,28 +39,33 @@ div#edycja_dnia {
 .zwykle {
   display:inline-block;
   width: 55px;
+  border: 2px solid rgb(255,255,255);
 }
 
 .roboczy {
   display:inline-block;
   width: 55px;
   background-color: rgb(250,250,250);
+  border: 2px solid rgb(255,255,255);
 }
 
 .sobota {
   display:inline-block;
   width: 55px;
   background-color: rgb(255,255,229);
+  border: 2px solid rgb(255,255,255);
 }
 
 .niedziela {
   display:inline-block;
   width: 55px;
   background-color: rgb(180,180,180);
+  border: 2px solid rgb(255,255,255);
 }
 
 .inny {
   display:inline-block;
   width: 55px;
   background-color: rgb(220,220,220);
+  border: 2px solid rgb(255,255,255);
 }
