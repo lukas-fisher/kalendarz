@@ -89,27 +89,22 @@ echo "<div id='edycja_dnia'></div>";
 
 function kwerenda()
 {
+  $miesiace = array(1=>"Styczeń", 2=>"Luty", 3=>"Marzec", 4=>"Kwiecień", 5=>"Maj", 6=>"Czerwiec", 7=>"Lipiec", 8=>"Sierpień", 9=>"Wrzesień", 10=>"Październik", 11=>"Listopad", 12=>"Grudzień");
   echo "Kalendarium za: ";
   echo "<select id='miesiac'>";
-  echo "<option value='1'>Styczeń</option>";
-  echo "<option value='2'>Luty</option>";
-  echo "<option value='3'>Marzec</option>";
-  echo "<option value='4'>Kwiecień</option>";
-  echo "<option value='5'>Maj</option>";
-  echo "<option value='6'>Czerwiec</option>";
-  echo "<option value='7'>Lipiec</option>";
-  echo "<option value='8'>Sierpień</option>";
-  echo "<option value='9'>Wrzesień</option>";
-  echo "<option value='10'>Październik</option>";
-  echo "<option value='11'>Listopad</option>";
-  echo "<option value='12'>Grudzień</option>";
+  foreach ($miesiace as $klucze => $wartosci) {
+    echo "<option value='".$klucze."'>".$wartosci."</option>";
+  }
   echo "</select> ";
 
+  $rok = date('Y');
   echo "<select id='rok'>";
-  echo "<option value='2021'>2021</option>";
-  echo "<option value='2022'>2022</option>";
+  for ($i=-1;$i<2;$i++)
+   {
+    $drukuj_rok = $rok+$i;
+    echo "<option value='".$drukuj_rok."'>".$drukuj_rok."</option>";
+   }
   echo "</select> ";
-
   echo "<button onclick='uzyskaj_kalendarium()'>pokaż schemat</button>";
 }
 
