@@ -37,7 +37,11 @@ function drukuj_schemat ($moj_miesiac)
  {
    echo "<div id='kalendarium'>";
    $naglowek = array("tydz","pon","wt", "śr", "czw", "pt", "sob", "nd");
-   echo "<div><div><h2>Schemat miesiąca</h2></div></div>";
+   echo "<div><div><h2>Schemat miesiąca</h2>";
+
+   echo "<button onclick='ustal_schemat()'>Ustal swój schemat kolorów</button>";
+
+   echo "</div></div>";
 
    echo "<div>";
    foreach ($naglowek as $klucze => $wartosci) {
@@ -57,7 +61,7 @@ function drukuj_schemat ($moj_miesiac)
        else {$klasa = "roboczy";}
        if (isset($wartosci[$i]))
         {
-           echo "<div class='".$klasa."' id='wydruk'><button onclick='edytuj_dzien(".$klucze.",".$i.")'>".$wartosci[$i]->format('d')."</button></div>";
+           echo "<div class='".$klasa."'><button class='wydruk' onclick='edytuj_dzien(".$klucze.",".$i.")'>".$wartosci[$i]->format('d')."</button></div>";
         }
        else
         {

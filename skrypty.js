@@ -90,3 +90,22 @@ function poza_zakresem() {
     }
   });
 };
+
+function ustal_schemat() {
+  $.ajax({
+    type: "POST",
+    url: "generator.php",
+    dataType: "html",
+    data: {
+      "funkcja": "koloruj"
+    },
+    success:function(dane){
+      $("div#edycja_dnia").html(dane);
+    },
+    beforeSend:function(){},
+    complete:function(){},
+    error:function(xhr){
+      console.log(xhr.responseText);
+    }
+  });
+};

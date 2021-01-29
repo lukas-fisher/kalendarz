@@ -56,6 +56,23 @@ if (isset($_POST) && $_POST!=null)
       echo "<option value='tak'>TAK</option></select>";
      break;
 
+     case "koloruj":
+     echo "schemat kolorów dla tygodnia!<br/>";
+     $schemat = array("tydz","poniedziałek","wtorek", "środa", "czwartek", "piątek", "sobota", "niedziela");
+
+     echo "<div>";
+     for ($i=1;$i<=7;$i++)
+      {
+        echo "<div class='kolorowanie'>".$schemat[$i]."<br/>";
+        echo "<input class='schemat' type='text' name='".$i."' col='5' /></div>";
+      }
+     echo "</div>";
+
+     echo "<button>zapisz schemat kolorów</button>";
+
+
+     break;
+
 
    }
  }

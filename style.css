@@ -7,6 +7,15 @@ div {
  border-radius: 5px;
 }
 
+button {
+  border-radius: 5px;
+  border: 1px solid rgb(230,230,230);
+}
+
+input:focus {
+  background-color: rgb(255,255,210);
+}
+
 div.wiersz {
   display: block;
   width: auto;
@@ -27,19 +36,39 @@ div#kalendarium  {
 }
 
 div#edycja_dnia {
-  width: 350px;
   display:block;
   border: 1px solid rgb(0,180,0);
 }
 
-#wydruk:hover {
-  background-color: rgba(50,50,50,0.3);
+.wydruk {
+  border: 1px solid rgb(130,130,130);
+}
+
+.wydruk:hover {
+  border: 1px solid rgb(200,0,0);
+}
+
+input.schemat {
+  width: 120px;
+  padding: 2px 2px;
+  border: 1px solid rgb(180,180,180);
 }
 
 .zwykle {
   display:inline-block;
   width: 55px;
   border: 2px solid rgb(255,255,255);
+}
+
+.kolorowanie {
+  display:inline-block;
+  width: 130px;
+  background-color: rgb(250,250,250);
+  border: 2px solid rgb(255,255,255);
+}
+
+.kolorowanie:hover {
+  border: 2px solid rgb(180,0,0);
 }
 
 .roboczy {
@@ -52,7 +81,7 @@ div#edycja_dnia {
 .sobota {
   display:inline-block;
   width: 55px;
-  background-color: rgb(255,255,229);
+  background-color: rgb(255,255,210);
   border: 2px solid rgb(255,255,255);
 }
 
