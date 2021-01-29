@@ -57,20 +57,38 @@ if (isset($_POST) && $_POST!=null)
      break;
 
      case "koloruj":
-     echo "schemat kolorów dla tygodnia!<br/>";
-     $schemat = array("tydz","poniedziałek","wtorek", "środa", "czwartek", "piątek", "sobota", "niedziela");
+     echo "<br/>schemat kolorów dla tygodnia!<br/><br/>";
+     $ile_rund = 7;
+     for ($i=1;$i<=$ile_rund;$i++)
+      {
+       echo "Set#".$i." <input class='set' type='text' id='tlo_".$i."' value='tło' /> ";
+       echo "<input class='set' type='text' id='obrys_".$i."' value='obrys' /> ";
+       echo "<button oncklick='probka(".$i.")'>dodaj</button> ";
+       /*
+       if ($i==$ile_rund)
+        {
+          echo "<button>+set</button> ";
+        }*/
+       echo "<br/><br/>";
+      }
+     echo "<div id='probka'></div>";
+     echo "<br/>";
 
-     echo "<div>";
+     break;
+
+     case "probka":
+     $schemat = array("tydz","poniedziałek","wtorek", "środa", "czwartek", "piątek", "sobota", "niedziela");
      for ($i=1;$i<=7;$i++)
       {
-        echo "<div class='kolorowanie'>".$schemat[$i]."<br/>";
-        echo "<input class='schemat' type='text' name='".$i."' col='5' /></div>";
+        echo "<div class='kolorowanie' style='background-color:rgb(".$_POST['tlo'].");border: 1px solid rgb(".$_POST['obrys'].")'>".$schemat[$i]."<br/>";
+        if ($i == $_POST['numer'])
+         {
+          echo "<input class='schemat' type='text' name='".$i."' value='Set#".$i."' /></div>";
+         }
+        else {
+         echo "<input class='schemat' type='text' name='".$i."' value='Set#".$i."' /></div>";
+        }
       }
-     echo "</div>";
-
-     echo "<button>zapisz schemat kolorów</button>";
-
-
      break;
 
 

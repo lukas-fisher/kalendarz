@@ -109,3 +109,25 @@ function ustal_schemat() {
     }
   });
 };
+
+function probka(numer) {
+  $.ajax({
+    type: "POST",
+    url: "generator.php",
+    dataType: "html",
+    data: {
+      "numer": (numer),
+      "tlo": $("#tlo_"+numer).val(),,
+      "obrys": $("#obrys_"+numer).val(),,
+      "funkcja": "probka"
+    },
+    success:function(dane){
+      $("div#probka").html(dane);
+    },
+    beforeSend:function(){},
+    complete:function(){},
+    error:function(xhr){
+      console.log(xhr.responseText);
+    }
+  });
+};

@@ -12,6 +12,11 @@ button {
   border: 1px solid rgb(230,230,230);
 }
 
+input {
+  text-align: center;
+  border-radius: 5px;
+}
+
 input:focus {
   background-color: rgb(255,255,210);
 }
@@ -52,6 +57,12 @@ input.schemat {
   width: 120px;
   padding: 2px 2px;
   border: 1px solid rgb(180,180,180);
+}
+
+input.set {
+  width: 100px;
+  padding: 2px 2px;
+  border: 1px solid rgb(220,220,220);
 }
 
 .zwykle {
