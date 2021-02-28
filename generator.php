@@ -56,7 +56,7 @@ if (isset($_POST) && $_POST!=null)
       echo "<option value='tak'>TAK</option></select>";
      break;
 
-     case "koloruj":
+     case "kolory":
      echo "<br/>schemat kolorów dla tygodnia!<br/><br/>";
      $ile_rund = 7;
      for ($i=1;$i<=$ile_rund;$i++)

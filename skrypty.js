@@ -97,7 +97,7 @@ function ustal_schemat() {
     url: "generator.php",
     dataType: "html",
     data: {
-      "funkcja": "koloruj"
+      "funkcja": "kolory"
     },
     success:function(dane){
       $("div#edycja_dnia").html(dane);
