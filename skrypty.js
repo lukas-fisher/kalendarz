@@ -106,6 +106,7 @@ function ustal_schemat() {
     complete:function(){},
     error:function(xhr){
       console.log(xhr.responseText);
+      $("div#edycja_dnia").html(dane);
     }
   });
 };
@@ -117,8 +118,8 @@ function probka(numer) {
     dataType: "html",
     data: {
       "numer": (numer),
-      "tlo": $("#tlo_"+numer).val(),,
-      "obrys": $("#obrys_"+numer).val(),,
+      "tlo": $("#tlo_"+numer).val(),
+      "obrys": $("#obrys_"+numer).val(),
       "funkcja": "probka"
     },
     success:function(dane){

@@ -61,8 +61,9 @@ if (isset($_POST) && $_POST!=null)
      $ile_rund = 7;
      for ($i=1;$i<=$ile_rund;$i++)
       {
-       echo "Set#".$i." <input class='set' type='text' id='tlo_".$i."' value='tło' /> ";
-       echo "<input class='set' type='text' id='obrys_".$i."' value='obrys' /> ";
+       echo "Set#".$i." tło <input class='set' type='color' id='tlo_".$i."' /> ";
+       echo "obrys <input class='set' type='color' id='obrys_".$i."' /> ";
+       echo "tekst <input class='set' type='color' id='tekst_".$i."' /> ";
        echo "<button oncklick='probka(".$i.")'>dodaj</button> ";
        /*
        if ($i==$ile_rund)
